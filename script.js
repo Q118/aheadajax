@@ -12,6 +12,18 @@ fetch(endpoint)
 
 function findMatches(wordToMatch, cities) {
     return cities.filter(place => {
+        const regex= new RegExp(wordToMatch, 'gi')
         // here we need to figure out if the city or state matches what was searched
+        return place.city.match(regex) || place.state.match(regex)
     })
 }
+
+function displayMatches() {
+    console.log(this.value);
+
+}
+
+const searchInput = document.querySelector('.search');
+const suggestions = document.querySelector('.suggestions');
+
+searchInput.addEventListener('change', findMatches)
