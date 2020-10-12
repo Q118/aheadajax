@@ -8,3 +8,10 @@ fetch(endpoint)
     .then(blob => blob.json())
     //spread into this push method to five us proper array 
     .then(data => cities.push(...data));
+
+
+function findMatches(wordToMatch, cities) {
+    return cities.filter(place => {
+        // here we need to figure out if the city or state matches what was searched
+    })
+}
